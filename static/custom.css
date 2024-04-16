@@ -1,9 +1,66 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/raleway/Raleway-Regular.woff2') format('woff2'),
+        url('fonts/raleway/Raleway-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/raleway/Raleway-SemiBold.woff2') format('woff2'),
+        url('fonts/raleway/Raleway-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/raleway/Raleway-Bold.woff2') format('woff2'),
+        url('fonts/raleway/Raleway-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/opensans/OpenSans-Bold.woff2') format('woff2'),
+        url('fonts/opensans/OpenSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/raleway/Raleway-Light.woff2') format('woff2'),
+        url('fonts/raleway/Raleway-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/raleway/Raleway-SemiBold.woff2') format('woff2'),
+        url('fonts/raleway/Raleway-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
     margin: 0;
+    font-family: 'Raleway';
 }
 header {
     background-image: url("images/header/1.png");
 }
+nav {
+    display: flex;
+    gap: 60px;
+}
+
 /* атомарные классы */
 
 .container {
@@ -12,25 +69,39 @@ header {
     margin: 0 auto;
 }
 h1 {
-    color: rgb(255, 255, 255)
+    color: #fff;
+    font-family: 'Open Sans';
+    text-align: center;
+    width: 60%;
+    display: inline-block;
+/*    flex-flow: wrap;*/
+    font-size: 3em;
+    padding-top: 150px;
+}
+h6 {
+    color: #a6a7af;
+}
+hr {
+    color: #4e5166;
 }
 .btn {
     display: inline-block;
     background-color: #e84545;
-    padding: 10px 40px;
+    padding: 20px 50px;
     border: 1px solid  rgb(255, 127, 80);
     text-decoration: none;
     color: rgb(255, 255, 255);
-
-
+    font-family: 'Raleway SemiBold';
 }
+
 .btndownload {
     display: inline-block;
     background-color: #e84545;
-    padding: 10px 60px;
+    padding: 20px 85px;
     border: 1px solid  rgb(255, 127, 80);
     text-decoration: none;
-    color: rgb(255, 255, 255);    
+    color: rgb(255, 255, 255);
+    font-family: 'Raleway SemiBold';   
 }
 .item {
     text-align: center;
@@ -40,32 +111,68 @@ h1 {
     display: block;
     width: 100%;
 }
+.socnet {
+    display: flex;
+    gap: 5px;
+} 
+/*.copy {
+    background-color: #313454;
+    text-align: center;
+}*/
+/*.row.c1{
+    background-color: ;
+}*/
 
 /* БЭМ */
 
-.box .nav {
+/*.row.c1 .nav {
     text-decoration: none;
-}
+    display: flex;
+    gap: 60px;
+}*/
 
 header .row.c2 {
     text-align: center;
+
+}
+/*header .row.c2 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}*/
+header {
+    padding-top: 45px;
+    padding-bottom: 150px;
 }
 header .row.c1 {
     display: flex;
     justify-content: space-between;
+/*    gap: 60px;*/
 }
 nav .navigation {
     color: #d8d8dc;
     text-decoration: none;
-} 
+    font-family: "Raleway Bold";
+    padding-bottom: 45px;
+}
+nav {
+    display: flex;
+    gap: 60px;
+    text-decoration: none;
+}
 
 #features .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
-    padding: 50px 0;
+    padding: 120px 0 130px 0;
     text-align: center;
-/* ???unexpected character background-color: #ffffff;*/
+    background-color: #fff;
+}
+#features .advant {
+    font-family: 'Raleway Bold';
 }
 #works {
     display: grid;
@@ -74,56 +181,205 @@ nav .navigation {
 #team .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 37px;
 /*???unexpected character background-color: #ffffff;*/
+    background: #fff;
+    padding: 100px 0;
 }
 #team .name {
     color: #454749;
+    font-family: 'Raleway';
+    padding: 35px 0 19px 0;
 }
 #team .status {
     color: #e84545;
+    font-family: 'Raleway';
+    padding: 0 0 35px;
 }
 #team .descr {
     color: #6c7279;
+    font-family: 'Raleway';
+    margin: 0;
+    padding-bottom: 35px;
 }
+#team .sn {
+    display: block;
+    width: 41px;
+    height: 41px;
+}
+#team .sn.fb {
+    background-image: url("images/team/socnet/fb.png");
+}
+#team .sn.tw {
+    background-image: url("images/team/socnet/tw.png");
+}
+#team .sn.in {
+    background-image: url("images/team/socnet/in.png");
+    /* repeat: nonrepeat */
+}
+
 #download {
     text-align: center;
     padding: 50px 0;
 /*??? unexpected character    background-color: #ffffff;*/
-}
-
-footer .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 50px 0;
-    background-color: #3a3e64;
-}
-footer .descr {
-    color: #71748b;
-}
-.copyright {
-    color: #77787b;
-
-}
-.copyrights {
-    color: #bfbfc6;
-
-}
-.copy {
-    background-color: #313454;
+    background: #fff;
 }
 #download .title {
     color: #2d3033;
     font-size: 2em;
     font-weight: normal;
+    font-family: 'Raleway Light';
 }
 #download .descr {
-    color:#2d3033;
+    color: #2d3033;
     font-size: 1em;
     font-weight: bold;
+    font-family: "Raleway Bold";
 }
+
+/*
+footer .ftr {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 50px 0;
+    background-color: #3a3e64;
+}*/
+
+footer .descr {
+   /* display: flex;
+    align-items: stretch;*/
+    color: #71748b;
+    padding-bottom: 100px;
+    text-align: justify;
+}
+footer .copy .copyright {
+    color: #77787b;
+    font-family:  'Open Sans';
+    padding-top: 30px;
+
+}
+footer .copy .copyrights {
+    color: #bfbfc6;
+    font-family:  'Open Sans';
+    padding-bottom: 30px;
+}
+footer .sn.fb {
+    background-image: url("images/footer/icons/1a.png");
+    display: block;
+    width: 42px;
+    height: 42px;
+    border: 2px solid #fff;
+}
+footer .sn.tw {
+    background-image: url("images/footer/icons/2a.png");
+    display: block;
+    width: 42px;
+    height: 42px;
+    border: 2px solid #fff;
+}
+footer .sn.in {
+    background-image: url("images/footer/icons/3a.png");
+    display: block;
+    width: 42px;
+    height: 42px;
+    border: 2px solid #fff;
+    /* repeat: nonrepeat */
+}
+footer .name {
+    font-family: "Raleway Bold";
+    display: block;
+    color: #f5f5f7;
+    padding: 70px 0 20px 0;
+}
+footer .name {
+    font-family: "Raleway Bold";
+    display: block;
+}
+footer .row.c1 {
+    display: flex;
+    justify-content: center;
+    background-color: #3a3e64;
+    gap: 160px;
+}
+/*footer .row.c1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    background-color: #3a3e64;
+    gap: 160px;
+}*/
+
+/*footer .container .row.c1 {
+    display: flex;
+    justify-content: center;
+    background-color: #3a3e64;
+    gap: 150px;
+}*/
+footer .col.c1 {
+    text-align: center;
+/*    flex-grow: 2;*/
+/*    width:33%;*/
+}
+footer .col.c2 {
+/*    justify-content: center;*/
+    text-align: center;
+/*    flex-grow: 2;*/
+/*    width:33%;*/
+}
+footer .col.c3 {
+    text-align: justify;
+/*    flex-grow: 1;*/
+/*    width:33%;*/
+}
+.pct {
+    width: 13px;
+    height: 15px;
+}
+/*footer .container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #3a3e64;
+}*/
+/*footer .row.c1 .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    background-color: #3a3e64;
+}*/
+ footer .row.c2 {
+    background-color: #313454;
+    text-align: center;
+/*    margin: 0 auto;*/
+    display: block;
+    width: 100%;
+}
+ 
+/* footer .row.c2 {
+    background-color: #313454;
+/*    text-align: center;*/
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}*/
+footer .bck {
+    background-color: #3a3e64;
+    width: 100%;
+/*    height: 200px;*/
+/*    padding: 50px 0;*/
+}
+/*footer {*/
+/*    padding: 50px 0;*/
+/*height: 300px;*/
+/*}*/
+
 
 @media all and (max-width: 1170px) {
     #team .container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+@media all and (max-width: 1170px) {
+    #features .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
