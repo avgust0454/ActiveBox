@@ -58,22 +58,20 @@ nav {
     max-width: 1170px;
     width: 100%;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 h1 {
     color: #fff;
     font-family: 'Open Sans';
     text-align: center;
     width: 60%;
-    display: inline-block;
     font-size: 3em;
-    padding-top: 150px;
+    margin: 0;
 }
 h6 {
     color: #a6a7af;
 }
-hr {
-    color: #4e5166;
-}
+
 .btn {
     display: inline-block;
     background-color: #e84545;
@@ -84,21 +82,9 @@ hr {
 /*    font-family: 'Raleway SemiBold';*/
     font-weight: 600;
 }
-
-.btndownload {
-    display: inline-block;
-    background-color: #e84545;
+.btn.s1 {
     padding: 20px 85px;
-    border: 1px solid  rgb(255, 127, 80);
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-/*    font-family: 'Raleway SemiBold';*/
-    font-weight: 600;   
 }
-.item {
-    text-align: center;
-}
-
 .bimg {
     display: block;
     width: 100%;
@@ -112,6 +98,10 @@ hr {
 
 header .row.c2 {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 150px;
 }
 header {
     padding-top: 45px;
@@ -120,7 +110,9 @@ header {
 header .row.c1 {
     display: flex;
     justify-content: space-between;
-/*    gap: 60px;*/
+    /* gap: 60px; */
+    border-bottom: 1px solid #505369;
+    padding-bottom: 40px;
 }
 nav .navigation {
     color: #d8d8dc;
@@ -144,6 +136,27 @@ nav .navigation {
 #works {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+}
+#works .item {
+    position: relative;
+}
+#works .hover_area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(232, 69, 69, 0.9);
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#works .item:hover .hover_area {
+    display: flex;
 }
 
 #team .container {
@@ -257,12 +270,184 @@ footer .row.c2 .s1 {
         padding-left: 15px;
         padding-right: 15px;
     }
+    h1 {
+        font-size: 2.5em;
+    }
+    #features .advant {
+        font-size: 0.8em;
+    }
+
+    .nom {
+        display: none;
+    }
+    header .row.c1 {
+        justify-content: center;
+    }
     #team .container {
         grid-template-columns: repeat(2, 1fr);
+        padding: 70px 0;
     }
     #features .container {
         grid-template-columns: repeat(2, 1fr);
+        padding-top: 100px;
+        padding-bottom: 110px;
+    }
+    #download .title {
+        font-size: 1.5em;
+    }
+    #works {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    footer .row.c1 {
+        padding-top: 35px;
+        padding-bottom: 45px;
+    }
+    footer .row.c2 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    nav {
+        gap: 40px;
     }
 }
 
 
+@media all and (max-width: 600px) {
+    .container {
+        padding-right: 13px;
+        padding-left: 13px;
+    }
+    footer .row.c1 .container {
+        grid-template-columns: 1fr;
+    }
+    footer .name {
+    font-weight: bold;
+    font-size: 0.7em;
+}
+    header .row.c2 {
+        padding-top: 40px;
+    } 
+    h1 {
+        width: unset;
+        font-size: 2.5em;
+    }
+    nav {
+        gap: 20px;
+    }
+    #features .container {
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+    #features .advant {
+        font-size: 0.7em;
+    }
+     #features .descr {
+        font-size: 0.8em;
+/*        font-weight: bold;*/
+    }
+    #works {
+        grid-template-columns: 1fr;
+    }
+    #team .container {
+        padding: 40px 0;
+    }
+    #team .name {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        font-size: 0.7em;
+    }
+    #team .status {
+        padding: 0 0 20px;
+        font-size: 0.8em;
+    }
+   #team .descr {
+    padding-bottom: 20px;
+    font-size: 0.8em;
+}
+    #download {
+        padding: 25px 0;
+    }
+    #download .descr {
+    font-size: 0.8em;
+    }
+    #download .title {
+        font-size: 1.3em;
+    }
+    footer .row.c1 {
+        padding-top: 20px;
+        padding-bottom: 25px;
+    }
+    footer .row.c2 {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .btn {
+        font-size: 0.7em;
+    }
+    .btn.s1{
+        font-size: 0.7em;
+    }
+
+}
+@media all and (max-width: 400px) {
+      .container {
+        padding-right: 10px;
+        padding-left: 10px;
+  }
+    footer .row.c1 .container {
+        grid-template-columns: 1fr;
+    }
+    header .row.c2 {
+        padding-top: 20px;
+    } 
+    h1 {
+        width: unset;
+        font-size: 2em;
+    }
+
+    nav {
+        gap: 10px;
+    }
+    #features .container {
+        padding-top: 25px;
+        padding-bottom: 30px;
+        grid-template-columns: 1fr;
+    }
+    #works {
+        grid-template-columns: 1fr;
+    }
+    #team .container {
+        padding: 20px 0;
+        grid-template-columns: 1fr;
+    }
+    #team .name {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    #team .status {
+        padding: 0 0 10px;
+    }
+    #team .descr {
+        padding-bottom: 10px;
+    }
+    #download {
+        padding: 10px 0;
+    }
+    #download .title {
+        font-size: 1.3em;
+    }
+    footer .row.c1 {
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
+    footer .row.c2 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .btn {
+        padding: 10px 25px;
+    }
+    .btn.s1 {
+        padding: 10px 40px;
+    }
+}
